@@ -1,0 +1,52 @@
+<html>
+<head><title>D3 Data visualization</title></head>
+<body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="card-img-top" src="https://cdn.pixabay.com/photo/2020/03/19/21/35/covid-4948866_960_720.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                          <h4 class="card-title">Global data </h4>
+                             {{#each response.Global }}
+                                <div class="row">
+                                    <div class="col-12">
+                               <p class="card-text"> {{@key}} <span class="number"> {{this}}.</span></p>
+                               </div>
+                                </div>
+                             {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Data per country</h1> 
+   
+    <table class="table responsive" id="sort">
+  <thead>
+    <tr>
+      <th scope="col">Country</th>
+      <th scope="col">New cases</th>
+      <th scope="col">New Death</th>
+       <th scope="col">Total death</th>
+       <th scope="col">Total Recovered</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each response.Countries}}
+    <tr>
+      <td>{{Country}}</td>
+      <td>{{NewConfirmed}}</td>
+      <td>{{NewDeaths}}</td>
+      <td>{{TotalDeaths}}</td>
+      <td>{{TotalRecovered}}</td>
+    </tr>
+    {{/each}} 
+  </tbody>
+</table>
+</div>
+</body>
+</html>
